@@ -1,21 +1,26 @@
 package com.zeroBank.step_defenitions;
 
 import com.zeroBank.pages.PayMeePage;
+import com.zeroBank.utilities.BrowserUtils;
+import com.zeroBank.utilities.Driver;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class PurchaseForeignCurrencyStepDefs {
     PayMeePage payMeePage = new PayMeePage();
+
+
     @Given("the user accesses the Purchase foreign currency cash tab")
     public void the_user_accesses_the_Purchase_foreign_currency_cash_tab() {
        payMeePage.PurchaseForeignCurrency.click();
+
 
     }
 
@@ -34,22 +39,34 @@ public class PurchaseForeignCurrencyStepDefs {
 
     @When("user tries to calculate cost without selecting a currency")
     public void user_tries_to_calculate_cost_without_selecting_a_currency() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new cucumber.api.PendingException();
+        payMeePage.AmountFieldInPFC.sendKeys("111");
+        payMeePage.DollarsRadioBInPFC.click();
+        payMeePage.CalculateButton.click();
+
+
     }
 
 
 
     @Then("error message should be displayed")
     public void error_message_should_be_displayed() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new cucumber.api.PendingException();
+
+        Alert alert = Driver.get().switchTo().alert();
+        String actual = alert.getText();
+        String expected = "Please, ensure that you have filled all the required fields with valid values.";
+        Assert.assertEquals(expected,actual);
+
+
+
     }
 
     @When("user tries to calculate cost without entering a value")
     public void user_tries_to_calculate_cost_without_entering_a_value() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new cucumber.api.PendingException();
+        Select select = new Select(payMeePage.SelectionOfCountries);
+        select.selectByIndex((int)Math.random()*14);
+        payMeePage.SelectCurrencyRadioBInPFC.click();
+        payMeePage.CalculateButton.click();
+
     }
 
 

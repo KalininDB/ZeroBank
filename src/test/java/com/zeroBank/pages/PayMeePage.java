@@ -56,4 +56,23 @@ public class PayMeePage {
 
     @FindBy(linkText = "Purchase Foreign Currency")
     public WebElement PurchaseForeignCurrency;
+
+    @FindBy(id = "pc_amount")
+    public WebElement AmountFieldInPFC;
+
+    @FindBy(id = "pc_inDollars_true")
+    public WebElement DollarsRadioBInPFC;
+
+    @FindBy(id ="pc_inDollars_false")
+    public WebElement SelectCurrencyRadioBInPFC;
+
+    @FindBy(id = "pc_calculate_costs")
+    public WebElement CalculateButton;
+
+    @FindBy(xpath = "//select[@id='pc_currency']")
+    public WebElement SelectionOfCountries;
+
+
+
+
 }
