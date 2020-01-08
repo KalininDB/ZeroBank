@@ -53,7 +53,7 @@ public class FindTransactionStepsDefs {
         List<Integer> list = new ArrayList<>();
 
         for (WebElement each : accountActivityPage.CheckFilteredTransactionByDates) {
-            BrowserUtils.waitForPresenceOfElement(By.xpath("//div[@id='filtered_transactions_for_account']//tr/td[1]"), 20);
+           // BrowserUtils.waitForPresenceOfElement(By.xpath("//div[@id='filtered_transactions_for_account']//tr/td[1]"), 10);
             list.add(Integer.parseInt(each.getText().replace("-", "")));
         }
 

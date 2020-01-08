@@ -3,20 +3,16 @@ package com.zeroBank.step_defenitions;
 import com.zeroBank.pages.AccountActivityPage;
 import com.zeroBank.pages.AccountSummaryPage;
 import com.zeroBank.utilities.Driver;
-import io.cucumber.datatable.dependency.com.fasterxml.jackson.annotation.JsonTypeInfo;
-import io.cucumber.java.bs.A;
-import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
-
 import java.util.List;
 
 public class AccountActivityStepDefs {
-    AccountActivityPage accountActivityPage;
-    AccountSummaryPage accountSummaryPage;
+    AccountActivityPage accountActivityPage = new AccountActivityPage();
+    AccountSummaryPage accountSummaryPage = new AccountSummaryPage();
 
     @Then("the user click on {string}")
     public void the_user_click_on(String string) {
@@ -34,7 +30,6 @@ public class AccountActivityStepDefs {
 
     @Then("In the Account drop	down default option should be {string}")
     public void in_the_Account_drop_down_default_option_should_be(String string) {
-        AccountActivityPage accountActivityPage = new AccountActivityPage();
         Select select;
         select = new Select(accountActivityPage.defaultOptionInAccount);
         System.out.println("Actual: "+select.getFirstSelectedOption().getText());

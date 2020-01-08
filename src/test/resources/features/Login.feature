@@ -1,10 +1,10 @@
-
+@Login
 Feature: Autorized user should be able login
 
   Background:
     Given the user is on the login page
-    Then the title should contains Log in
-@Login
+    Then the title should contains "Log in"
+
     Scenario: Login as autorized users
       When the users enters the correct credentials
       Then the user should be able to log in
