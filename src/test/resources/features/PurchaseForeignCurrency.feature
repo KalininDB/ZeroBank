@@ -5,6 +5,7 @@ Feature: Purchase Foreign Currency
     Given the user is on the login page
     Then the users enters the correct credentials
     Then the user click on "Pay Bills"
+
   Scenario: Available currencies
 Given the user accesses the Purchase foreign currency cash tab
     Then following currencies should be available
@@ -25,6 +26,7 @@ Given the user accesses the Purchase foreign currency cash tab
     Given the user accesses the Purchase foreign currency cash tab
     When user tries to calculate cost without selecting a currency
     Then error message should be displayed
+
   Scenario: Error message for not entering value
     Given the user accesses the Purchase foreign currency cash tab
     When user tries to calculate cost without entering a value
