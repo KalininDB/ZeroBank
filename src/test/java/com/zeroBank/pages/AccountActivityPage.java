@@ -5,8 +5,6 @@ import io.cucumber.datatable.dependency.com.fasterxml.jackson.databind.ser.Seria
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-
-import java.io.FileInputStream;
 import java.util.List;
 
 public class AccountActivityPage extends BasePage {
@@ -56,6 +54,9 @@ public class AccountActivityPage extends BasePage {
 
     @FindBy(xpath = "//div[@class=\"well\"]")
     public WebElement noResults;
+
+    @FindBy(id = "aa_accountId")
+    public WebElement SelectDropList;
 
 
 
