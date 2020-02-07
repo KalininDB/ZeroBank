@@ -12,6 +12,7 @@ import org.openqa.selenium.WebElement;
 import java.util.List;
 
 public class StatementAndDocumentsStepsDefs {
+
     AccountSummaryPage accountSummaryPage = new AccountSummaryPage();
     OnlineStatementsPage onlineStatementsPage = new OnlineStatementsPage();
 
