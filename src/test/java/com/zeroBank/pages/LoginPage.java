@@ -2,6 +2,7 @@ package com.zeroBank.pages;
 
 
 import com.zeroBank.utilities.Driver;
+import io.appium.java_client.pagefactory.iOSXCUITBy;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -11,7 +12,9 @@ public class LoginPage extends BasePage{
         PageFactory.initElements(Driver.get(), this);
     }
 
+
     @FindBy (id = "signin_button")
+    @iOSXCUITBy
     public WebElement SignInLink;
 
     @FindBy(id = "user_login")

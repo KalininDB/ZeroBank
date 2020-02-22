@@ -3,12 +3,18 @@ package com.zeroBank.step_defenitions;
 
 import com.zeroBank.pages.AccountSummaryPage;
 import com.zeroBank.utilities.Driver;
-import io.cucumber.java.bs.A;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.Cookie;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 public class AccountSummaryStepsDefs {
@@ -18,6 +24,10 @@ public class AccountSummaryStepsDefs {
     actualTitle = Driver.get().getTitle();
         System.out.println(actualTitle+"\n"+Driver.get().getTitle());
     Assert.assertEquals(Driver.get().getTitle(),actualTitle);
+Actions actions = new Actions(Driver.get());
+        WebDriverWait wait = new WebDriverWait(Driver.get(), 20);
+ArrayList<Cookie> e = new ArrayList<>(Driver.get().manage().getCookies());
+Cookie ew = Driver.get().manage().getCookieNamed("sdf");
 
     }
 
@@ -32,6 +42,10 @@ public class AccountSummaryStepsDefs {
             i++;
         }
         System.out.println("+++++++++++++++++++++++++");
+//        WebElement r = Driver.get().findElement(By.xpath("afsdsadfsdf"));
+//        WebDriverWait w = new WebDriverWait(Driver.get(), 20);
+//        w.until(ExpectedConditions.presenceOfElementLocated(By.xpath("afsdsadfsdf")));
+
     }
 
     @When("Account summary page should have to following account types:")
