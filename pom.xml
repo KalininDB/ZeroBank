@@ -24,6 +24,17 @@
             <artifactId>webdrivermanager</artifactId>
             <version>3.7.1</version>
         </dependency>
+
+        <dependency>
+            <groupId>io.appium</groupId>
+            <artifactId>java-client</artifactId>
+            <version>7.3.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-simple</artifactId>
+            <version>1.7.30</version>
+        </dependency>
         <dependency>
             <groupId>log4j</groupId>
             <artifactId>log4j</artifactId>
@@ -50,6 +61,9 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.0.0-M4</version>
                 <configuration>
+                    <parallel>methods</parallel>
+                    <perCoreThreadCount>false</perCoreThreadCount>
+                    <threadCountMethods>2</threadCountMethods>
                     <testFailureIgnore>true</testFailureIgnore>
                     <includes>
                         <include>**/*CukesRunner.java</include>

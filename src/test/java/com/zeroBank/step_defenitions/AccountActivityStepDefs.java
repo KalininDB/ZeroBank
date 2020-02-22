@@ -6,8 +6,11 @@ import com.zeroBank.utilities.Driver;
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.Wait;
+
 import java.util.List;
 
 public class AccountActivityStepDefs {
@@ -35,6 +38,7 @@ public class AccountActivityStepDefs {
         System.out.println("Actual: "+select.getFirstSelectedOption().getText());
         System.out.println("Excpected: "+string);
         Assert.assertEquals(select.getFirstSelectedOption().getText(),string);
+
     }
 
     @Then("Account drop down should have the following options")
